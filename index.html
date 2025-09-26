@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auz Finance - Your Trusted Finance Broker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <a href="https://www.google.com/maps?q=11+Stettler+Blvd+Mickleham+VIC+3064" target="_blank" class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>11 Stettler Blvd Mickleham VIC 3064</span>
+                    </a>
+                    <a href="mailto:manpreet@auzfinance.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>manpreet@auzfinance.com</span>
+                    </a>
+                </div>
+                <div class="social-contact">
+                    <a href="tel:+61425856164" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+61 425 856 164</span>
+                    </a>
+                    <a href="https://share.google/VV79UA9aRMIbo7GMx" target="_blank" class="maps-icon" title="View on Google Maps">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </a>
+                    <a href="https://wa.me/61425856164" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="images/logo2.png" alt="Auz Finance Logo">
+                    <span class="logo-text">Auz Finance</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="background-slide active" style="background-image: url('images/website-images/office-pic.jpg')"></div>
+            <div class="background-slide" style="background-image: url('images/website-images/office-pic-2.jpg')"></div>
+            <div class="background-slide" style="background-image: url('images/website-images/office-pic-3.jpg')"></div>
+            <div class="background-slide" style="background-image: url('images/website-images/office-pic-4.jpg')"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Trusted Finance Broker</h1>
+                <p class="hero-subtitle">Get the best finance solutions for your home, business, and personal needs with expert guidance and competitive rates.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Get Free Quote</a>
+                    <a href="#services" class="btn-secondary">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Finance Services</h2>
+                <p class="section-subtitle">Professional finance solutions tailored to your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/website-images/home-loan-service.jpg" alt="Home Loan" class="primary-img">
+                        <img src="images/website-images/home-loan-service.jpg" alt="Home Loan Hover" class="hover-img">
+                    </div>
+                    <div class="service-content">
+                        <h3>Home Loans</h3>
+                        <p>Secure your dream home with competitive interest rates and flexible repayment options.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/website-images/refinancing-service.jpg" alt="Refinancing" class="primary-img">
+                        <img src="images/website-images/refinancing-service-2.jpg" alt="Refinancing Hover" class="hover-img">
+                    </div>
+                    <div class="service-content">
+                        <h3>Refinancing</h3>
+                        <p>Lower your monthly payments and save money with our refinancing solutions.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/website-images/assest-loan-service.jpg" alt="Asset Loans" class="primary-img">
+                        <img src="images/website-images/consumer-asseset-service.jpg" alt="Asset Loans Hover" class="hover-img">
+                    </div>
+                    <div class="service-content">
+                        <h3>Asset Loans</h3>
+                        <p>Finance your valuable assets with tailored loan solutions and competitive terms.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/website-images/consumer-asseset-service.jpg" alt="Consumer Asset Loans" class="primary-img">
+                        <img src="images/website-images/consumer-assest-service-2.jpg" alt="Consumer Asset Loans Hover" class="hover-img">
+                    </div>
+                    <div class="service-content">
+                        <h3>Consumer Asset Loans</h3>
+                        <p>Personal asset financing for boats, caravans, motorcycles and more.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/website-images/car-truck-service.jpg" alt="Car & Truck Loans" class="primary-img">
+                        <img src="images/website-images/car-truck-service-2.jpg" alt="Car & Truck Loans Hover" class="hover-img">
+                    </div>
+                    <div class="service-content">
+                        <h3>Commercial Car & Truck Loans</h3>
+                        <p>Finance your commercial vehicles with flexible terms and competitive rates.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/website-images/business-service.jpg" alt="Business Loans" class="primary-img">
+                        <img src="images/website-images/commercial-loans-service.jpg" alt="Business Loans Hover" class="hover-img">
+                    </div>
+                    <div class="service-content">
+                        <h3>Business Loans</h3>
+                        <p>Grow your business with our comprehensive business financing solutions.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/website-images/commercial-loans-service.jpg" alt="Commercial Loans" class="primary-img">
+                        <img src="images/website-images/commericial-loan-service-2.jpg" alt="Commercial Loans Hover" class="hover-img">
+                    </div>
+                    <div class="service-content">
+                        <h3>Commercial Loans</h3>
+                        <p>Large-scale commercial financing for property and business expansion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Authentic Google Reviews from satisfied customers</p>
+                <div class="google-verification">
+                    <i class="fab fa-google"></i>
+                    <span>Verified Google Reviews</span>
+                </div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                R
+                            </div>
+                            <div>
+                                <h4>Robert rob</h4>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="review-time">a week ago</span>
+                            </div>
+                        </div>
+                        <i class="fab fa-google review-platform"></i>
+                    </div>
+                    <p class="review-text">"Thanks, Manpreet, for helping us with our first home loan. He has a wealth of knowledge and is very helpful. He guided us all way from pre-approval to settlement. He goes above & beyond to find you best interest rate. His after settlement service is also great. I definitely recommend AUS FINANCE & specially Manpreet."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                A
+                            </div>
+                            <div>
+                                <h4>Arwinder Singh</h4>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="review-time">a week ago</span>
+                            </div>
+                        </div>
+                        <i class="fab fa-google review-platform"></i>
+                    </div>
+                    <p class="review-text">"Manpreet helped us in refinancing our current home loan. It was seamless journey from start to the end. Very impressed with level of details which helped us to understand key concepts."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                A
+                            </div>
+                            <div>
+                                <h4>avreen kaur</h4>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="review-time">3 days ago</span>
+                            </div>
+                        </div>
+                        <i class="fab fa-google review-platform"></i>
+                    </div>
+                    <p class="review-text">"Highly recommended.. AUZFINANCE provided me excellent assistance from beginning to end with best loan options for my new car. Manpreet shoker is very professional, incredible responsive and genuine committed to their profession."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                M
+                            </div>
+                            <div>
+                                <h4>Maninder</h4>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="review-time">4 months ago</span>
+                            </div>
+                        </div>
+                        <i class="fab fa-google review-platform"></i>
+                    </div>
+                    <p class="review-text">"Manpreet's integrity, communication, knowledge and patience is second to none. He not only got us the best rates, but also the best outcome for our immediate and future needs. Thank you Manpreet for your guidance and all the help."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                S
+                            </div>
+                            <div>
+                                <h4>Sumeet Singh</h4>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="review-time">6 months ago</span>
+                            </div>
+                        </div>
+                        <i class="fab fa-google review-platform"></i>
+                    </div>
+                    <p class="review-text">"Auz Finance helped me a lot for my finance. Manpreet assist me from start to the settlement step by step. Really happy with the service and satisfied. Thanks Auz Finance."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                N
+                            </div>
+                            <div>
+                                <h4>Navneet Khehra</h4>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="review-time">6 months ago</span>
+                            </div>
+                        </div>
+                        <i class="fab fa-google review-platform"></i>
+                    </div>
+                    <p class="review-text">"Auz Finance helped me to buy my first home with 5 percent deposit. I am so thankful to Manpreet for giving great service."</p>
+                </div>
+            </div>
+            <div class="reviews-cta">
+                <a href="https://share.google/VV79UA9aRMIbo7GMx" target="_blank" class="btn-primary">
+                    <i class="fab fa-google"></i>
+                    View All Google Reviews
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Auz Finance</h2>
+                    <p class="lead">Your trusted partner in achieving financial goals with personalized service and expert guidance.</p>
+                    <p>At Auz Finance, we understand that every financial journey is unique. Our team of experienced finance brokers is committed to finding the best loan solutions tailored to your specific needs and circumstances.</p>
+                    <p>Whether you're buying your first home, expanding your business, or refinancing existing loans, we work with leading lenders across Australia to secure competitive rates and favorable terms for our clients.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <h4>Expert Guidance</h4>
+                                <p>Professional advice from experienced finance brokers</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-handshake"></i>
+                            <div>
+                                <h4>Personalized Service</h4>
+                                <p>Tailored solutions for your unique financial needs</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Trusted & Reliable</h4>
+                                <p>Licensed and regulated finance professionals</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-images">
+                    <img src="images/website-images/about-image.jpg" alt="About Auz Finance" class="about-img-main">
+                    <img src="images/website-images/about-image-2.jpg" alt="Our Team" class="about-img-secondary">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to start your finance journey? Contact us today for a free consultation</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-left">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Visit Us</h4>
+                                <a href="https://www.google.com/maps?q=11+Stettler+Blvd+Mickleham+VIC+3064" target="_blank" class="contact-link">11 Stettler Blvd<br>Mickleham VIC 3064</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Call Us</h4>
+                                <a href="tel:+61425856164" class="contact-link">+61 425 856 164</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Us</h4>
+                                <a href="mailto:manpreet@auzfinance.com" class="contact-link">manpreet@auzfinance.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/61425856164" target="_blank" class="contact-link">Quick consultation via WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-map">
+                        <h3>Find Us</h3>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8353922083735!2d144.89184821531866!3d-37.594801179803356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6572e6b2b2b2b%3A0x6b2b2b2b2b2b2b2b!2s11%20Stettler%20Blvd%2C%20Mickleham%20VIC%203064%2C%20Australia!5e0!3m2!1sen!2sau!4v1639123456789!5m2!1sen!2sau"
+                                width="100%" 
+                                height="300" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Auz Finance Location - 11 Stettler Blvd, Mickleham VIC 3064">
+                            </iframe>
+                        </div>
+                        <div class="map-buttons">
+                            <a href="https://www.google.com/maps?q=11+Stettler+Blvd+Mickleham+VIC+3064" target="_blank" class="btn-secondary map-btn">
+                                <i class="fas fa-directions"></i>
+                                Get Directions
+                            </a>
+                            <a href="https://share.google/VV79UA9aRMIbo7GMx" target="_blank" class="btn-secondary map-btn">
+                                <i class="fas fa-star"></i>
+                                View Reviews
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <select id="service" name="service" required>
+                                    <option value="">Select Service Interest</option>
+                                    <option value="home-loan">Home Loan</option>
+                                    <option value="refinancing">Refinancing</option>
+                                    <option value="asset-loans">Asset Loans</option>
+                                    <option value="consumer-asset-loans">Consumer Asset Loans</option>
+                                    <option value="car-truck-loans">Commercial Car & Truck Loans</option>
+                                    <option value="business-loans">Business Loans</option>
+                                    <option value="commercial-loans">Commercial Loans</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Tell us about your finance needs" rows="6"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo2.png" alt="Auz Finance Logo">
+                        <span>Auz Finance</span>
+                    </div>
+                    <p>Your trusted finance broker for all your lending needs. Professional service with personalized solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Home Loans</a></li>
+                        <li><a href="#services">Refinancing</a></li>
+                        <li><a href="#services">Business Loans</a></li>
+                        <li><a href="#services">Commercial Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps?q=11+Stettler+Blvd+Mickleham+VIC+3064" target="_blank">11 Stettler Blvd, Mickleham VIC 3064</a></p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+61425856164">+61 425 856 164</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:manpreet@auzfinance.com">manpreet@auzfinance.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Auz Finance. All rights reserved. | Licensed Finance Broker</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
