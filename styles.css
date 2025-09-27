@@ -8,27 +8,33 @@
 :root {
     --bg-primary: #ffffff;
     --bg-secondary: #f8fafc;
-    --bg-tertiary: #1e3a8a;
-    --text-primary: #333333;
+    --bg-tertiary: #2c3e50;
+    --bg-nav: #34495e;
+    --text-primary: #2c3e50;
     --text-secondary: #6b7280;
     --text-light: #ffffff;
-    --accent-primary: #f59e0b;
-    --accent-hover: #d97706;
+    --text-nav: #ecf0f1;
+    --accent-primary: #e67e22;
+    --accent-hover: #d35400;
+    --accent-secondary: #3498db;
     --border-color: #e5e7eb;
     --shadow-light: rgba(0, 0, 0, 0.1);
     --shadow-medium: rgba(0, 0, 0, 0.15);
 }
 
 [data-theme="dark"] {
-    --bg-primary: #1f2937;
-    --bg-secondary: #111827;
-    --bg-tertiary: #374151;
-    --text-primary: #f9fafb;
-    --text-secondary: #d1d5db;
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+    --bg-tertiary: #4a5568;
+    --bg-nav: #1a202c;
+    --text-primary: #f7fafc;
+    --text-secondary: #a0aec0;
     --text-light: #ffffff;
-    --accent-primary: #f59e0b;
-    --accent-hover: #d97706;
-    --border-color: #4b5563;
+    --text-nav: #f7fafc;
+    --accent-primary: #ed8936;
+    --accent-hover: #dd6b20;
+    --accent-secondary: #4299e1;
+    --border-color: #4a5568;
     --shadow-light: rgba(0, 0, 0, 0.3);
     --shadow-medium: rgba(0, 0, 0, 0.4);
 }
@@ -50,15 +56,21 @@ body {
 
 /* Top Contact Bar */
 .top-bar {
-    background: #1e3a8a;
-    color: white;
-    padding: 6px 0;
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-nav) 100%);
+    color: var(--text-light);
+    padding: 8px 0;
     font-size: 13px;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1001;
+    z-index: 1002;
     transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .top-bar {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .top-bar-content {
@@ -68,86 +80,91 @@ body {
     gap: 20px;
 }
 
-.contact-info {
+.top-contact-info {
     display: flex;
     gap: 30px;
     align-items: center;
 }
 
-.social-contact {
+.top-social {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.maps-icon {
-    background: #f59e0b;
-    color: white;
-    padding: 8px 10px;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-}
-
-.maps-icon:hover {
-    background: #d97706;
-    transform: scale(1.05);
-}
-
-.contact-item {
+.top-contact-item {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: white;
+    color: var(--text-light);
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 13px;
 }
 
-.contact-item:hover {
-    color: #60a5fa;
+.top-contact-item:hover {
+    color: var(--accent-primary);
+}
+
+.top-icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 14px;
+}
+
+.maps-btn {
+    background: var(--accent-primary);
+    box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
+}
+
+.maps-btn:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.4);
 }
 
 .whatsapp-btn {
     background: #25d366;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
 }
 
 .whatsapp-btn:hover {
     background: #20c55e;
     transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
 }
 
 /* Navigation */
 .navbar {
-    background: var(--bg-primary);
-    backdrop-filter: blur(10px);
-    padding: 22px 0;
+    background: rgba(52, 73, 94, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 15px 0;
     position: fixed;
-    top: 30px;
+    top: 49px;
     width: 100%;
-    z-index: 1000;
+    z-index: 1001;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 20px var(--shadow-light);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(26, 32, 44, 0.95);
 }
 
 .navbar.scrolled {
-    top: 30px;
-    background: var(--bg-primary);
+    background: rgba(52, 73, 94, 0.98);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
 }
 
-.navbar.scrolled .top-bar {
-    top: 0;
+[data-theme="dark"] .navbar.scrolled {
+    background: rgba(26, 32, 44, 0.98);
 }
 
 .nav-content {
@@ -156,20 +173,20 @@ body {
     align-items: center;
 }
 
-.nav-actions {
+.nav-controls {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
 .theme-toggle {
-    background: var(--bg-secondary);
-    border: 2px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 50px;
     padding: 8px 12px;
     cursor: pointer;
     transition: all 0.3s ease;
-    color: var(--text-primary);
+    color: var(--text-nav);
     font-size: 16px;
     display: flex;
     align-items: center;
@@ -183,6 +200,7 @@ body {
     color: white;
     border-color: var(--accent-primary);
     transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
 }
 
 .logo {
@@ -199,7 +217,7 @@ body {
 .logo-text {
     font-size: 24px;
     font-weight: 700;
-    color: var(--bg-tertiary);
+    color: var(--text-nav);
 }
 
 .nav-menu {
@@ -210,7 +228,7 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--text-nav);
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
@@ -243,12 +261,14 @@ body {
     cursor: pointer;
 }
 
-.hamburger span {
+.hamburger .bar {
     width: 25px;
     height: 3px;
-    background: var(--text-primary);
+    background: var(--text-nav);
     margin: 3px 0;
     transition: 0.3s;
+    border-radius: 2px;
+    display: block;
 }
 
 /* Hero Section */
@@ -301,7 +321,7 @@ body {
     color: white;
     max-width: 800px;
     margin: 0 auto;
-    padding-top: 120px;
+    padding-top: 140px;
 }
 
 .hero-title {
@@ -336,16 +356,16 @@ body {
 }
 
 .btn-primary {
-    background: #f59e0b;
+    background: var(--accent-primary);
     color: white;
-    border: 2px solid #f59e0b;
+    border: 2px solid var(--accent-primary);
 }
 
 .btn-primary:hover {
-    background: #d97706;
-    border-color: #d97706;
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 10px 25px rgba(230, 126, 34, 0.3);
 }
 
 .btn-secondary {
@@ -356,7 +376,7 @@ body {
 
 .btn-secondary:hover {
     background: white;
-    color: #1e3a8a;
+    color: var(--text-primary);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
 }
@@ -370,7 +390,7 @@ body {
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--bg-tertiary);
+    color: var(--text-primary);
     margin-bottom: 15px;
 }
 
@@ -412,42 +432,28 @@ body {
     position: relative;
     height: 250px;
     overflow: hidden;
+    border-radius: 20px 20px 0 0;
 }
 
-.service-image img {
+.service-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: all 0.3s ease;
 }
 
-.primary-img {
-    opacity: 1;
-}
-
-.hover-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-
-.service-card:hover .primary-img {
-    opacity: 0;
-}
-
-.service-card:hover .hover-img {
-    opacity: 1;
+.service-card:hover .service-img {
+    transform: scale(1.05);
 }
 
 .service-content {
-    padding: 30px;
+    padding: 20px 30px 30px;
 }
 
 .service-content h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--bg-tertiary);
+    color: var(--text-primary);
     margin-bottom: 15px;
 }
 
@@ -467,7 +473,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    color: #1e3a8a;
+    color: var(--text-primary);
     font-weight: 600;
     margin-top: 20px;
 }
@@ -485,10 +491,10 @@ body {
 }
 
 .review-card {
-    background: #f8fafc;
+    background: var(--bg-secondary);
     border-radius: 20px;
     padding: 30px;
-    border-left: 4px solid #f59e0b;
+    border-left: 4px solid var(--accent-primary);
     transition: all 0.3s ease;
 }
 
@@ -513,7 +519,7 @@ body {
 .reviewer-avatar {
     width: 50px;
     height: 50px;
-    background: var(--bg-tertiary);
+    background: var(--text-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -525,7 +531,7 @@ body {
 
 .reviewer-info h4 {
     font-weight: 600;
-    color: var(--bg-tertiary);
+    color: var(--text-primary);
     margin-bottom: 5px;
 }
 
@@ -578,7 +584,7 @@ body {
 .about-text h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1e3a8a;
+    color: var(--text-primary);
     margin-bottom: 20px;
 }
 
@@ -609,14 +615,14 @@ body {
 }
 
 .feature i {
-    color: #f59e0b;
+    color: var(--accent-primary);
     font-size: 1.5rem;
     margin-top: 5px;
 }
 
 .feature h4 {
     font-weight: 600;
-    color: #1e3a8a;
+    color: var(--text-primary);
     margin-bottom: 5px;
 }
 
@@ -653,23 +659,23 @@ body {
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
     margin-top: 60px;
-    align-items: start;
+    align-items: stretch;
 }
 
 @media (min-width: 1200px) {
     .contact-content {
         gap: 60px;
-        grid-template-columns: 1fr 4fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 .contact-left {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
 }
 
 .contact-right {
@@ -680,87 +686,82 @@ body {
 .contact-info h3,
 .contact-form h3,
 .contact-map h3 {
-    color: var(--bg-tertiary);
+    color: var(--text-primary);
     font-weight: 600;
     margin-bottom: 25px;
     font-size: 1.25rem;
 }
 
-.contact .contact-info {
+.contact-info {
     background: var(--bg-secondary);
-    padding: 40px 30px;
+    padding: 40px;
     border-radius: 20px;
     border: 1px solid var(--border-color);
     box-shadow: 0 15px 35px var(--shadow-light);
-    text-align: center;
+    flex: 1;
 }
 
-.contact .contact-info h3 {
+.contact-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-info h3 {
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     font-size: 1.4rem;
+    color: var(--text-primary);
 }
 
-.contact .contact-info .contact-item {
+.contact-methods .contact-item {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 25px;
+    gap: 10px;
     align-items: center;
     text-align: center;
-    padding: 30px 20px;
+    padding: 25px 15px;
     border-radius: 15px;
     transition: all 0.3s ease;
     background: var(--bg-primary);
     border: 1px solid transparent;
-    min-height: 140px;
+    min-height: 120px;
     justify-content: center;
 }
 
-.contact .contact-info .contact-item div {
+.contact-methods .contact-item div {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 8px;
+    gap: 5px;
 }
 
-.contact .contact-info .contact-item:last-child {
-    margin-bottom: 0;
-}
-
-.contact .contact-info .contact-item:hover {
+.contact-methods .contact-item:hover {
     border-color: var(--accent-primary);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
+    box-shadow: 0 8px 25px rgba(230, 126, 34, 0.15);
 }
 
-.contact .contact-info .contact-item i {
+.contact-methods .contact-item i {
     color: var(--accent-primary);
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    width: auto !important;
-    display: block;
-    text-align: center;
-}
-
-.contact .contact-info .contact-item h4 {
-    font-weight: 600;
-    color: var(--bg-tertiary);
+    font-size: 2rem;
     margin-bottom: 8px;
-    font-size: 1.2rem;
-    text-align: center;
-    width: 100%;
 }
 
-.contact .contact-info .contact-item p,
-.contact .contact-info .contact-item a {
+.contact-methods .contact-item h4 {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.contact-methods .contact-item p,
+.contact-methods .contact-item a {
     color: var(--text-secondary);
     margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    text-align: center;
-    width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.3;
 }
 
 .contact-link {
@@ -778,15 +779,13 @@ body {
 
 .contact-form {
     background: var(--bg-secondary);
-    padding: 60px;
+    padding: 40px;
     border-radius: 25px;
     box-shadow: 0 20px 60px var(--shadow-medium);
     border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
-    height: fit-content;
-    min-height: 700px;
-    max-width: none;
+    height: 100%;
 }
 
 .contact-form::before {
@@ -835,7 +834,7 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent-primary);
-    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1);
     transform: translateY(-1px);
 }
 
@@ -867,14 +866,13 @@ body {
 }
 
 /* Contact Map Section */
-.contact .contact-map {
-    display: flex;
-    flex-direction: column;
+.contact-map {
     background: var(--bg-secondary);
-    padding: 35px;
+    padding: 25px;
     border-radius: 20px;
     border: 1px solid var(--border-color);
     box-shadow: 0 15px 35px var(--shadow-light);
+    flex: 1;
 }
 
 .map-container {
@@ -888,7 +886,7 @@ body {
 .map-container iframe {
     display: block;
     width: 100%;
-    height: 250px;
+    height: 200px;
 }
 
 .map-buttons {
@@ -921,7 +919,7 @@ body {
     color: white;
     border-color: var(--accent-primary);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
 }
 
 .map-btn i {
@@ -930,7 +928,7 @@ body {
 
 /* Footer */
 .footer {
-    background: #1e3a8a;
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-nav) 100%);
     color: white;
     padding: 60px 0 30px;
 }
@@ -1033,43 +1031,39 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .top-bar {
-        padding: 8px 0;
-        font-size: 13px;
+        padding: 6px 0;
+        font-size: 12px;
     }
     
-    .top-bar-content {
-        flex-wrap: wrap;
+    .top-contact-info {
+        gap: 20px;
+    }
+    
+    .top-social {
         gap: 10px;
     }
     
-    .contact-info {
-        order: 2;
-        width: 100%;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-    
-    .social-contact {
-        order: 1;
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .contact-item span {
+    .top-contact-item span {
         display: none;
     }
     
     .navbar {
-        top: 55px;
-        padding: 15px 0;
-        background: rgba(255, 255, 255, 0.98);
+        top: 37px;
+        padding: 12px 0;
+        background: rgba(52, 73, 94, 0.98);
         backdrop-filter: blur(20px);
     }
     
     .navbar.scrolled {
-        top: 55px;
-        background: rgba(255, 255, 255, 0.98);
+        background: rgba(52, 73, 94, 0.98);
+    }
+    
+    [data-theme="dark"] .navbar {
+        background: rgba(26, 32, 44, 0.98);
+    }
+    
+    [data-theme="dark"] .navbar.scrolled {
+        background: rgba(26, 32, 44, 0.98);
     }
     
     .logo img {
@@ -1086,11 +1080,11 @@ body {
     
     .nav-menu {
         position: fixed;
-        top: 125px;
+        top: 92px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 125px);
-        background: rgba(255, 255, 255, 0.98);
+        height: calc(100vh - 92px);
+        background: rgba(52, 73, 94, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: flex-start;
@@ -1100,6 +1094,10 @@ body {
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
         z-index: 999;
         gap: 25px;
+    }
+    
+    [data-theme="dark"] .nav-menu {
+        background: rgba(26, 32, 44, 0.98);
     }
     
     .nav-menu.active {
@@ -1114,15 +1112,15 @@ body {
     }
     
     .hamburger:hover {
-        background: var(--bg-secondary);
+        background: rgba(255, 255, 255, 0.1);
     }
     
-    .hamburger span {
-        background: var(--bg-tertiary);
+    .hamburger .bar {
+        background: var(--text-nav);
         border-radius: 2px;
     }
     
-    .nav-actions {
+    .nav-controls {
         gap: 15px;
     }
     
@@ -1134,20 +1132,22 @@ body {
     
     .contact-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
         margin-top: 40px;
     }
     
-    .contact-left {
-        gap: 25px;
-    }
-    
-    .contact .contact-info .contact-item {
+    .contact-info .contact-item {
         padding: 20px 15px;
         margin-bottom: 18px;
+        min-height: 110px;
     }
     
-    .contact .contact-info {
+    .contact-info {
+        padding: 25px;
+    }
+    
+    .contact-map {
+        margin-top: 30px;
         padding: 25px;
     }
     
@@ -1236,21 +1236,21 @@ body {
     }
     
     .navbar {
-        top: 45px;
-        padding: 12px 0;
-        background: rgba(255, 255, 255, 0.98);
+        top: 35px;
+        padding: 10px 0;
+        background: rgba(52, 73, 94, 0.98);
         backdrop-filter: blur(20px);
     }
     
     .navbar.scrolled {
-        top: 45px;
-        background: rgba(255, 255, 255, 0.98);
+        top: 35px;
+        background: rgba(52, 73, 94, 0.98);
     }
     
     .nav-menu {
-        top: 95px;
-        height: calc(100vh - 95px);
-        background: rgba(255, 255, 255, 0.98);
+        top: 80px;
+        height: calc(100vh - 80px);
+        background: rgba(52, 73, 94, 0.98);
         backdrop-filter: blur(20px);
         padding-top: 30px;
         gap: 20px;
@@ -1280,14 +1280,19 @@ body {
         padding: 20px;
     }
     
-    .contact .contact-info,
-    .contact .contact-map {
+    .contact-info,
+    .contact-map {
         padding: 20px;
     }
     
-    .contact .contact-info .contact-item {
+    .contact-info .contact-item {
         padding: 18px 12px;
         margin-bottom: 15px;
+        min-height: 100px;
+    }
+    
+    .map-container iframe {
+        height: 250px;
     }
     
     .contact-content {
@@ -1321,7 +1326,7 @@ body {
         gap: 12px;
     }
     
-    .nav-actions {
+    .nav-controls {
         gap: 10px;
     }
     
