@@ -68,6 +68,8 @@ body {
     font-size: 13px;
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     z-index: 1002;
     transition: all 0.2s ease;
@@ -159,6 +161,8 @@ body {
     padding: 15px 0;
     position: fixed;
     top: 53px;
+    left: 0;
+    right: 0;
     width: 100%;
     z-index: 1001;
     transition: all 0.2s ease;
@@ -174,11 +178,24 @@ body {
 .navbar.scrolled {
     background: rgba(52, 73, 94, 0.98);
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
 }
 
 [data-theme="dark"] .navbar.scrolled {
     background: rgba(15, 23, 42, 0.98);
     box-shadow: 0 6px 30px rgba(6, 182, 212, 0.15);
+    backdrop-filter: blur(20px);
+}
+
+.top-bar.scrolled {
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-nav) 100%);
+    backdrop-filter: blur(20px);
+}
+
+[data-theme="dark"] .top-bar.scrolled {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    box-shadow: 0 4px 25px rgba(6, 182, 212, 0.2);
+    backdrop-filter: blur(20px);
 }
 
 .nav-content {

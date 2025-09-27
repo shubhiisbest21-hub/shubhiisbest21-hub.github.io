@@ -64,12 +64,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
+    const topBar = document.querySelector('.top-bar');
     
     window.addEventListener('scroll', function() {
+        // Enhance both bars on scroll
         if (window.scrollY > 100) {
             navbar.classList.add('scrolled');
+            topBar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
+            topBar.classList.remove('scrolled');
         }
     });
     
@@ -82,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.getElementById(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 100;
+                const offsetTop = targetSection.offsetTop - 120; // Account for both bars (53px + 15px padding + extra space)
                 
                 window.scrollTo({
                     top: offsetTop,
@@ -103,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
             
-            if (window.pageYOffset >= (sectionTop - 200)) {
+            if (window.pageYOffset >= (sectionTop - 150)) {
                 current = section.getAttribute('id');
             }
         });
@@ -397,7 +401,7 @@ if (!('scrollBehavior' in document.documentElement.style)) {
                 const targetSection = document.getElementById(targetId);
                 
                 if (targetSection) {
-                    const offsetTop = targetSection.offsetTop - 100;
+                    const offsetTop = targetSection.offsetTop - 120; // Account for both bars
                     
                     window.scrollTo({
                         top: offsetTop,
