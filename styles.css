@@ -491,11 +491,18 @@ body {
 }
 
 .review-card {
-    background: var(--bg-secondary);
+    background: var(--bg-primary);
     border-radius: 20px;
     padding: 30px;
     border-left: 4px solid var(--accent-primary);
     transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .review-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
 }
 
 .review-card:hover {
@@ -529,10 +536,19 @@ body {
     font-size: 18px;
 }
 
+[data-theme="dark"] .reviewer-avatar {
+    background: var(--accent-primary);
+    color: white;
+}
+
 .reviewer-info h4 {
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 5px;
+}
+
+[data-theme="dark"] .reviewer-info h4 {
+    color: var(--text-primary);
 }
 
 .review-stars {
@@ -546,15 +562,23 @@ body {
     display: block;
 }
 
+[data-theme="dark"] .review-time {
+    color: var(--text-secondary);
+}
+
 .review-platform {
     color: #ea4335;
     font-size: 1.2rem;
 }
 
 .review-text {
-    color: #374151;
+    color: var(--text-primary);
     line-height: 1.6;
     font-style: italic;
+}
+
+[data-theme="dark"] .review-text {
+    color: var(--text-secondary);
 }
 
 .reviews-cta {
@@ -571,7 +595,11 @@ body {
 /* About Section */
 .about {
     padding: 100px 0;
-    background: #f8fafc;
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .about {
+    background: var(--bg-secondary);
 }
 
 .about-content {
@@ -588,17 +616,29 @@ body {
     margin-bottom: 20px;
 }
 
+[data-theme="dark"] .about-text h2 {
+    color: var(--text-primary);
+}
+
 .lead {
     font-size: 1.25rem;
-    color: #6b7280;
+    color: var(--text-secondary);
     margin-bottom: 25px;
     font-weight: 500;
 }
 
+[data-theme="dark"] .lead {
+    color: var(--text-secondary);
+}
+
 .about-text p {
-    color: #374151;
+    color: var(--text-primary);
     margin-bottom: 20px;
     line-height: 1.7;
+}
+
+[data-theme="dark"] .about-text p {
+    color: var(--text-secondary);
 }
 
 .about-features {
@@ -627,8 +667,12 @@ body {
 }
 
 .feature p {
-    color: #6b7280;
+    color: var(--text-secondary);
     margin: 0;
+}
+
+[data-theme="dark"] .feature p {
+    color: var(--text-secondary);
 }
 
 .about-images {
