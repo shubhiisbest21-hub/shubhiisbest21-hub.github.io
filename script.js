@@ -14,6 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
+        // Add sparkle effect for dark mode
+        if (newTheme === 'dark') {
+            document.body.style.transform = 'scale(1.02)';
+            setTimeout(() => {
+                document.body.style.transform = 'scale(1)';
+            }, 200);
+            
+            // Add temporary glow effect
+            document.documentElement.style.boxShadow = '0 0 50px rgba(6, 182, 212, 0.3)';
+            setTimeout(() => {
+                document.documentElement.style.boxShadow = 'none';
+            }, 500);
+        }
+        
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme);
@@ -29,23 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Background Image Rotation
-    const backgroundSlides = document.querySelectorAll('.background-slide');
-    let currentSlide = 0;
-    
-    function rotateBackground() {
-        // Remove active class from all slides
-        backgroundSlides.forEach(slide => slide.classList.remove('active'));
-        
-        // Move to next slide
-        currentSlide = (currentSlide + 1) % backgroundSlides.length;
-        
-        // Add active class to current slide
-        backgroundSlides[currentSlide].classList.add('active');
-    }
-    
-    // Rotate background every 5 seconds
-    setInterval(rotateBackground, 5000);
+    // Static background - no rotation needed
     
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
@@ -329,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.service-card, .review-card, .about-text, .about-images').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.6s ease';
+        el.style.transition = 'all 0.4s ease';
         observer.observe(el);
     });
     
@@ -366,26 +364,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (heroContent) {
         heroContent.style.opacity = '0';
         heroContent.style.transform = 'translateY(50px)';
-        heroContent.style.transition = 'all 1s ease';
+        heroContent.style.transition = 'all 0.6s ease';
     }
     
-    // Performance optimization: Preload next background image
-    function preloadNextImage() {
-        const nextIndex = (currentSlide + 1) % backgroundSlides.length;
-        const nextImage = new Image();
-        const nextSlide = backgroundSlides[nextIndex];
-        const bgImage = nextSlide.style.backgroundImage.match(/url\(['"]?([^'"]*)['"]?\)/);
-        
-        if (bgImage) {
-            nextImage.src = bgImage[1];
-        }
-    }
-    
-    // Preload next image every time we rotate
-    setInterval(preloadNextImage, 5000);
-    
-    // Initial preload
-    preloadNextImage();
+    // No preloading needed for static background
     
 });
 
