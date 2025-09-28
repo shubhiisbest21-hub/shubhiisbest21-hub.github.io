@@ -53,6 +53,7 @@
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
                     <li><a href="#why-choose-us" class="nav-link">Why Choose Us</a></li>
+                    <li><a href="#calculator" class="nav-link">Calculator</a></li>
                     <li><a href="#reviews" class="nav-link">Reviews</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -223,6 +224,212 @@
                     </div>
                     <h3>Proven Track Record</h3>
                     <p>Successfully helped hundreds of clients secure their dream homes and investment properties with 5-star Google reviews and testimonials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Loan Calculator</h2>
+                <p class="section-subtitle">Calculate your loan payments and find the best financing option for your needs</p>
+            </div>
+            <div class="calculator-content">
+                <div class="calculator-tabs">
+                    <button class="tab-btn active" data-tab="home-loan">Home Loan</button>
+                    <button class="tab-btn" data-tab="personal-loan">Personal Loan</button>
+                    <button class="tab-btn" data-tab="car-loan">Car Loan</button>
+                    <button class="tab-btn" data-tab="refinance">Refinance</button>
+                </div>
+
+                <div class="calculator-panels">
+                    <!-- Home Loan Calculator -->
+                    <div class="calc-panel active" id="home-loan">
+                        <div class="calc-form">
+                            <div class="calc-inputs">
+                                <div class="input-group">
+                                    <label for="home-loan-amount">Loan Amount</label>
+                                    <div class="input-wrapper">
+                                        <span class="currency">$</span>
+                                        <input type="number" id="home-loan-amount" placeholder="500,000" min="1000" max="10000000">
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="home-loan-term">Loan Term</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="home-loan-term" placeholder="30" min="1" max="40">
+                                        <span class="unit">years</span>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="home-interest-rate">Interest Rate</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="home-interest-rate" placeholder="6.5" min="0.1" max="20" step="0.01">
+                                        <span class="unit">%</span>
+                                    </div>
+                                </div>
+                                <button class="calc-btn" onclick="calculateHomeLoan()">Calculate</button>
+                            </div>
+                            <div class="calc-results">
+                                <h3>Your Results</h3>
+                                <div class="result-item">
+                                    <span class="result-label">Monthly Payment:</span>
+                                    <span class="result-value" id="home-monthly-payment">$0</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Total Interest:</span>
+                                    <span class="result-value" id="home-total-interest">$0</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Total Amount:</span>
+                                    <span class="result-value" id="home-total-amount">$0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Loan Calculator -->
+                    <div class="calc-panel" id="personal-loan">
+                        <div class="calc-form">
+                            <div class="calc-inputs">
+                                <div class="input-group">
+                                    <label for="personal-loan-amount">Loan Amount</label>
+                                    <div class="input-wrapper">
+                                        <span class="currency">$</span>
+                                        <input type="number" id="personal-loan-amount" placeholder="50,000" min="1000" max="500000">
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="personal-loan-term">Loan Term</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="personal-loan-term" placeholder="5" min="1" max="10">
+                                        <span class="unit">years</span>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="personal-interest-rate">Interest Rate</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="personal-interest-rate" placeholder="8.5" min="0.1" max="25" step="0.01">
+                                        <span class="unit">%</span>
+                                    </div>
+                                </div>
+                                <button class="calc-btn" onclick="calculatePersonalLoan()">Calculate</button>
+                            </div>
+                            <div class="calc-results">
+                                <h3>Your Results</h3>
+                                <div class="result-item">
+                                    <span class="result-label">Monthly Payment:</span>
+                                    <span class="result-value" id="personal-monthly-payment">$0</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Total Interest:</span>
+                                    <span class="result-value" id="personal-total-interest">$0</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Total Amount:</span>
+                                    <span class="result-value" id="personal-total-amount">$0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car Loan Calculator -->
+                    <div class="calc-panel" id="car-loan">
+                        <div class="calc-form">
+                            <div class="calc-inputs">
+                                <div class="input-group">
+                                    <label for="car-loan-amount">Loan Amount</label>
+                                    <div class="input-wrapper">
+                                        <span class="currency">$</span>
+                                        <input type="number" id="car-loan-amount" placeholder="40,000" min="1000" max="200000">
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="car-loan-term">Loan Term</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="car-loan-term" placeholder="7" min="1" max="10">
+                                        <span class="unit">years</span>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="car-interest-rate">Interest Rate</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="car-interest-rate" placeholder="7.5" min="0.1" max="20" step="0.01">
+                                        <span class="unit">%</span>
+                                    </div>
+                                </div>
+                                <button class="calc-btn" onclick="calculateCarLoan()">Calculate</button>
+                            </div>
+                            <div class="calc-results">
+                                <h3>Your Results</h3>
+                                <div class="result-item">
+                                    <span class="result-label">Monthly Payment:</span>
+                                    <span class="result-value" id="car-monthly-payment">$0</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Total Interest:</span>
+                                    <span class="result-value" id="car-total-interest">$0</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Total Amount:</span>
+                                    <span class="result-value" id="car-total-amount">$0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Refinance Calculator -->
+                    <div class="calc-panel" id="refinance">
+                        <div class="calc-form">
+                            <div class="calc-inputs">
+                                <div class="input-group">
+                                    <label for="refinance-balance">Current Balance</label>
+                                    <div class="input-wrapper">
+                                        <span class="currency">$</span>
+                                        <input type="number" id="refinance-balance" placeholder="300,000" min="1000" max="10000000">
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="refinance-term">Remaining Term</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="refinance-term" placeholder="25" min="1" max="40">
+                                        <span class="unit">years</span>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="refinance-new-rate">New Interest Rate</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="refinance-new-rate" placeholder="5.5" min="0.1" max="20" step="0.01">
+                                        <span class="unit">%</span>
+                                    </div>
+                                </div>
+                                <button class="calc-btn" onclick="calculateRefinance()">Calculate</button>
+                            </div>
+                            <div class="calc-results">
+                                <h3>Your Results</h3>
+                                <div class="result-item">
+                                    <span class="result-label">New Monthly Payment:</span>
+                                    <span class="result-value" id="refinance-monthly-payment">$0</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Total Interest:</span>
+                                    <span class="result-value" id="refinance-total-interest">$0</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Total Savings:</span>
+                                    <span class="result-value" id="refinance-savings">$0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-cta">
+                    <h3>Ready to Get Started?</h3>
+                    <p>Our calculations are estimates. Contact us for personalized advice and accurate quotes.</p>
+                    <a href="#contact" class="btn-primary">Get Free Consultation</a>
                 </div>
             </div>
         </div>
@@ -556,6 +763,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#why-choose-us">Why Choose Us</a></li>
+                        <li><a href="#calculator">Calculator</a></li>
                         <li><a href="#reviews">Reviews</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>

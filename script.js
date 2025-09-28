@@ -414,3 +414,133 @@ if (!('scrollBehavior' in document.documentElement.style)) {
     
     smoothScrollPolyfill();
 }
+
+// Calculator Tab Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const calcPanels = document.querySelectorAll('.calc-panel');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all tabs and panels
+            tabBtns.forEach(b => b.classList.remove('active'));
+            calcPanels.forEach(p => p.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding panel
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+
+// Calculator Functions
+function calculateLoan(principal, rate, years) {
+    const monthlyRate = rate / 100 / 12;
+    const numPayments = years * 12;
+    
+    if (monthlyRate === 0) {
+        // Handle 0% interest rate case
+        const monthlyPayment = principal / numPayments;
+        return {
+            monthlyPayment: monthlyPayment,
+            totalInterest: 0,
+            totalAmount: principal
+        };
+    }
+    
+    const monthlyPayment = (principal * monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / 
+                          (Math.pow(1 + monthlyRate, numPayments) - 1);
+    
+    const totalAmount = monthlyPayment * numPayments;
+    const totalInterest = totalAmount - principal;
+    
+    return {
+        monthlyPayment: monthlyPayment,
+        totalInterest: totalInterest,
+        totalAmount: totalAmount
+    };
+}
+
+function formatCurrency(amount) {
+    return new Intl.NumberFormat('en-AU', {
+        style: 'currency',
+        currency: 'AUD',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    }).format(Math.round(amount));
+}
+
+function calculateHomeLoan() {
+    const amount = parseFloat(document.getElementById('home-loan-amount').value);
+    const term = parseFloat(document.getElementById('home-loan-term').value);
+    const rate = parseFloat(document.getElementById('home-interest-rate').value);
+    
+    if (!amount || !term || !rate || amount <= 0 || term <= 0 || rate < 0) {
+        alert('Please fill in all fields with valid values');
+        return;
+    }
+    
+    const result = calculateLoan(amount, rate, term);
+    
+    document.getElementById('home-monthly-payment').textContent = formatCurrency(result.monthlyPayment);
+    document.getElementById('home-total-interest').textContent = formatCurrency(result.totalInterest);
+    document.getElementById('home-total-amount').textContent = formatCurrency(result.totalAmount);
+}
+
+function calculatePersonalLoan() {
+    const amount = parseFloat(document.getElementById('personal-loan-amount').value);
+    const term = parseFloat(document.getElementById('personal-loan-term').value);
+    const rate = parseFloat(document.getElementById('personal-interest-rate').value);
+    
+    if (!amount || !term || !rate || amount <= 0 || term <= 0 || rate < 0) {
+        alert('Please fill in all fields with valid values');
+        return;
+    }
+    
+    const result = calculateLoan(amount, rate, term);
+    
+    document.getElementById('personal-monthly-payment').textContent = formatCurrency(result.monthlyPayment);
+    document.getElementById('personal-total-interest').textContent = formatCurrency(result.totalInterest);
+    document.getElementById('personal-total-amount').textContent = formatCurrency(result.totalAmount);
+}
+
+function calculateCarLoan() {
+    const amount = parseFloat(document.getElementById('car-loan-amount').value);
+    const term = parseFloat(document.getElementById('car-loan-term').value);
+    const rate = parseFloat(document.getElementById('car-interest-rate').value);
+    
+    if (!amount || !term || !rate || amount <= 0 || term <= 0 || rate < 0) {
+        alert('Please fill in all fields with valid values');
+        return;
+    }
+    
+    const result = calculateLoan(amount, rate, term);
+    
+    document.getElementById('car-monthly-payment').textContent = formatCurrency(result.monthlyPayment);
+    document.getElementById('car-total-interest').textContent = formatCurrency(result.totalInterest);
+    document.getElementById('car-total-amount').textContent = formatCurrency(result.totalAmount);
+}
+
+function calculateRefinance() {
+    const balance = parseFloat(document.getElementById('refinance-balance').value);
+    const term = parseFloat(document.getElementById('refinance-term').value);
+    const newRate = parseFloat(document.getElementById('refinance-new-rate').value);
+    
+    if (!balance || !term || !newRate || balance <= 0 || term <= 0 || newRate < 0) {
+        alert('Please fill in all fields with valid values');
+        return;
+    }
+    
+    const result = calculateLoan(balance, newRate, term);
+    
+    // Calculate potential savings (assuming current rate is 1.5% higher)
+    const currentRate = newRate + 1.5;
+    const currentResult = calculateLoan(balance, currentRate, term);
+    const savings = currentResult.totalAmount - result.totalAmount;
+    
+    document.getElementById('refinance-monthly-payment').textContent = formatCurrency(result.monthlyPayment);
+    document.getElementById('refinance-total-interest').textContent = formatCurrency(result.totalInterest);
+    document.getElementById('refinance-savings').textContent = formatCurrency(Math.max(0, savings));
+}
