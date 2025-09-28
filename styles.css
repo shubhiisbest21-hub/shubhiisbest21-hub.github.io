@@ -239,6 +239,16 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+    overflow: hidden;
+}
+
+.logo-container {
+    width: 200px;
+    height: 60px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 
@@ -994,7 +1004,11 @@ body {
     width: auto;
     background: transparent !important;
     transition: all 0.2s ease;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
+    object-fit: cover;
+    object-position: left center;
+    max-width: 200px;
+    overflow: hidden;
 }
 
 [data-theme="dark"] .logo img {
@@ -1144,8 +1158,12 @@ body {
 
 .footer-logo img {
     height: 40px;
+    width: auto;
     background: transparent !important;
-    filter: brightness(1.1) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    filter: brightness(1.2) drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
+    object-fit: cover;
+    object-position: left center;
+    max-width: 160px;
 }
 
 [data-theme="dark"] .footer-logo img {
@@ -1269,10 +1287,13 @@ body {
         box-shadow: 0 6px 30px rgba(6, 182, 212, 0.15);
     }
     
-    .logo img {
-        height: 45px;
-        filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2));
-    }
+     .logo img {
+         height: 45px;
+         filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2));
+         object-fit: cover;
+         object-position: left center;
+         max-width: 180px;
+     }
     
     [data-theme="dark"] .logo img {
         filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
@@ -1499,10 +1520,13 @@ body {
         gap: 20px;
     }
     
-    .logo img {
-        height: 40px;
-        filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
-    }
+     .logo img {
+         height: 40px;
+         filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
+         object-fit: cover;
+         object-position: left center;
+         max-width: 160px;
+     }
     
     [data-theme="dark"] .logo img {
         filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
