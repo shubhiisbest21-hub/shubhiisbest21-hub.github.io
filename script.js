@@ -126,6 +126,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     
     contactForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Always prevent default to handle with JavaScript
+        
         // Get form data
         const formData = new FormData(contactForm);
         const formObject = {};
@@ -136,16 +138,37 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Basic form validation
         if (!validateForm(formObject)) {
-            e.preventDefault(); // Only prevent if validation fails
             return false;
         }
         
-        // If validation passes, let the form submit naturally to Web3Forms
-        // Show quick notification before redirect
+        // Show sending notification
         showNotification('Sending your message...', 'info');
         console.log('Form submission:', formObject);
         
-        // Form will now submit to Web3Forms and redirect to success page
+        // Submit to Web3Forms using fetch
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Web3Forms response:', data);
+            if (data.success) {
+                // Success! Redirect to custom success page
+                showNotification('Message sent successfully! Redirecting...', 'success');
+                setTimeout(() => {
+                    window.location.href = 'success.html';
+                }, 1500);
+            } else {
+                // Error handling
+                showNotification('Error sending message. Please try again.', 'error');
+                console.error('Web3Forms error:', data);
+            }
+        })
+        .catch(error => {
+            console.error('Network error:', error);
+            showNotification('Network error. Please check your connection and try again.', 'error');
+        });
     });
     
     function validateForm(data) {
