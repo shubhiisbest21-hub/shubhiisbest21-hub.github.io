@@ -1608,6 +1608,11 @@ body {
         padding: 25px;
     }
     
+    .contact-methods {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
     .contact-form {
         padding: 30px;
         min-height: auto;
@@ -1810,6 +1815,11 @@ body {
         padding: 18px 12px;
         margin-bottom: 15px;
         min-height: 100px;
+    }
+    
+    .contact-methods {
+        grid-template-columns: 1fr;
+        gap: 12px;
     }
     
     .calculator-tabs {
