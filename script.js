@@ -126,8 +126,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
         // Get form data
         const formData = new FormData(contactForm);
         const formObject = {};
@@ -137,16 +135,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Basic form validation
-        if (validateForm(formObject)) {
-            // Show success message
-            showNotification('Thank you for your message! We will get back to you soon.', 'success');
-            
-            // Reset form
-            contactForm.reset();
-            
-            // In a real implementation, you would send this data to a server
-            console.log('Form submission:', formObject);
+        if (!validateForm(formObject)) {
+            e.preventDefault(); // Only prevent if validation fails
+            return false;
         }
+        
+        // If validation passes, let the form submit naturally to Web3Forms
+        // Show quick notification before redirect
+        showNotification('Sending your message...', 'info');
+        console.log('Form submission:', formObject);
+        
+        // Form will now submit to Web3Forms and redirect to success page
     });
     
     function validateForm(data) {

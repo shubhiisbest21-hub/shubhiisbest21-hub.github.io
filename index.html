@@ -708,7 +708,14 @@
                 <div class="contact-right">
                     <div class="contact-form">
                         <h3>Send Us a Message</h3>
-                        <form id="contactForm">
+                        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+                            <!-- Web3Forms Configuration -->
+                            <input type="hidden" name="access_key" value="dd1e2244-cafa-41a8-b2c6-7a0f150d9c8a">
+                            <input type="hidden" name="to" value="manpreet@auzfinance.com">
+                            <input type="hidden" name="subject" value="New Contact Form Submission - Auz Finance">
+                            <input type="hidden" name="from_name" value="Auz Finance Website">
+                            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                            
                             <div class="form-row">
                                 <div class="form-group">
                                     <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
@@ -736,8 +743,12 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <textarea id="message" name="message" placeholder="Tell us about your finance needs" rows="6"></textarea>
+                                <textarea id="message" name="message" placeholder="Tell us about your finance needs" rows="6" required></textarea>
                             </div>
+                            
+                            <!-- Honeypot Spam Protection -->
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                            
                             <button type="submit" class="btn-primary">Send Message</button>
                         </form>
                     </div>
